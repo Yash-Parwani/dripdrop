@@ -1,8 +1,12 @@
 import { Navbar, Container,Nav } from "react-bootstrap";
 
+
+import HomePage from '/images/HomePage.png'
+
+
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{  backgroundImage: `url("${HomePage}")`}}>
       <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="#home">
