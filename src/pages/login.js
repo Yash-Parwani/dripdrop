@@ -1,8 +1,7 @@
-
-
+import {Form,Button} from "react-bootstrap"
 function Login() {
   return (
-    <div className="App">
+    <div className="Login">
       <Form>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>

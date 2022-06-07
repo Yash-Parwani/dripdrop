@@ -1,31 +1,44 @@
-import { Navbar, Container,Nav } from "react-bootstrap";
+import { useState } from "react";
 
-
-import HomePage from '/images/HomePage.png'
-
+import HomePage from "./assets/images/HomePage.png";
+import PlzLogin from "./assets/images/PlzLogin.png";
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
   return (
-    <div className="App" style={{  backgroundImage: `url("${HomePage}")`}}>
-      <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">
-            <img
-              alt=""
-              src="/logo.svg"
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />
-            DripDrop
-          </Navbar.Brand>
-          <Nav className="justify-content-end">
-            <Nav.Link href="#home">Login</Nav.Link>
-            <Nav.Link href="#features">Register</Nav.Link>
-            
-          </Nav>
-        </Container>
-      </Navbar>
+    <div
+      className="App"
+      style={{
+        backgroundImage: loggedIn
+          ? "url(" + HomePage + ")"
+          : "url(" + PlzLogin + ")",
+        backgroundColor: "black",
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        height: "91.9vh",
+        width: "99.99vw",
+        position:"relative",
+        zIndex: "0",
+      }}
+    >
+      {!loggedIn && 
+      <>
+      <p
+        style={{
+          zIndex: "1",
+          color: "white",
+          position: "absolute",
+          top:"50vh",
+          left:"29vw",
+          fontSize:50
+        }}
+      >
+        Please Login/Register First
+      </p>
+      </>
+    }
      
     </div>
   );
