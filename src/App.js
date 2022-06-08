@@ -8,6 +8,8 @@ import Navigation from "./components/Navigation";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import Home from "./pages/Home"
+import Drip from "./pages/Drip";
+import Drop from "./pages/Drop";
 
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
           <Route exact path="/" element={<Home loggedIn={loggedIn}/>} />
           <Route exact path="/login" element={<Login loggedIn={loggedIn} handleLoggedIn={handleLoggedIn}/>} />
           <Route exact path="/register" element={<Register loggedIn={loggedIn}/>} />
+          <Route exact path="/drip" element={<Drip/>} />
+          <Route exact path="/drop" element={<Drop/>} />
         </Routes>
     </div>
   );

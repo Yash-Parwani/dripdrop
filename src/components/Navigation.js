@@ -3,7 +3,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import DripDrop from "../assets/images/DripDrop.png";
 
 
-function Navigation() {
+function Navigation({loggedIn}) {
   return (
     <div className="Navigation">
       <Navbar bg="dark" variant="dark">
@@ -21,7 +21,10 @@ function Navigation() {
             </Navbar.Brand>
             
           </LinkContainer>
-          <Nav className="justify-content-end">
+
+          {!loggedIn && 
+          <>
+             <Nav className="justify-content-end">
             <LinkContainer to="/login">
               <Nav.Link>Login</Nav.Link>
             </LinkContainer>
@@ -29,6 +32,8 @@ function Navigation() {
               <Nav.Link>Register</Nav.Link>
             </LinkContainer>
           </Nav>
+          </>}
+          
         </Container>
       </Navbar>
     </div>

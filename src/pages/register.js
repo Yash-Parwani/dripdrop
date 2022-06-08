@@ -1,6 +1,19 @@
 import {Form,Button} from "react-bootstrap"
 import PlzLogin from "../assets/images/PlzLogin.png";
+import {useNavigate} from "react-router-dom"
+import { useEffect } from "react";
+
 function Register() {
+  const navigate = useNavigate()
+  const handleSubmit = (event) =>{
+    event.preventDefault();
+
+
+    navigate('/login');
+
+
+
+  }
   return (
     <div className="Register" style={{
       backgroundImage:  "url(" + PlzLogin + ")",
@@ -19,7 +32,7 @@ function Register() {
     }}>
       <Form style={{
         width:"40%"
-      }}>
+      }} onSubmit={handleSubmit}>
   <Form.Group className="mb-3 " controlId="formBasicEmail">
     <Form.Label style={{
       color:"white"
