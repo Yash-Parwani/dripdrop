@@ -17,7 +17,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   
+<<<<<<< HEAD
 <BrowserRouter>
+=======
+<Router>
+>>>>>>> 816960978137ffa8f04f94808043ca41b3ad17a2
 
   <React.StrictMode>
       <App />

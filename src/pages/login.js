@@ -1,5 +1,6 @@
 import {Form,Button} from "react-bootstrap"
 import PlzLogin from "../assets/images/PlzLogin.png";
+<<<<<<< HEAD
 import { Navigate, useNavigate} from "react-router-dom"
 import { useEffect } from "react";
 
@@ -16,6 +17,12 @@ function Login({loggedIn,handleLoggedIn}) {
 
 
 
+=======
+
+function Login() {
+  const handleSubmit = (event) =>{
+    event.preventDefault();
+>>>>>>> 816960978137ffa8f04f94808043ca41b3ad17a2
   }
   return (
     <div className="Login" style={{
@@ -35,7 +42,11 @@ function Login({loggedIn,handleLoggedIn}) {
     }}>
       <Form style={{
         width:"40%"
+<<<<<<< HEAD
       }} onSubmit={useHandleSubmit}>
+=======
+      }} onSubmit={handleSubmit}>
+>>>>>>> 816960978137ffa8f04f94808043ca41b3ad17a2
   <Form.Group className="mb-3 " controlId="formBasicEmail">
     <Form.Label style={{
       color:"white"
