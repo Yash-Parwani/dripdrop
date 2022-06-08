@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import HomePage from "./assets/images/HomePage.png";
 import PlzLogin from "./assets/images/PlzLogin.png";
+import Drop from "./assets/images/Drop.png"
+import Drip from "./assets/images/Drip.png"
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -24,7 +26,7 @@ function App() {
       }}
     >
       {!loggedIn && 
-      <>
+      
       <p
         style={{
           zIndex: "1",
@@ -37,7 +39,45 @@ function App() {
       >
         Please Login/Register First
       </p>
-      </>
+      
+    }
+    {loggedIn &&
+    <>
+    <div className="Drip" style={{
+      display:"flex",
+      flexDirection:"column",
+      justifyContent:"center",
+      alignItems:"center",
+      position : "absolute",
+      top:"42vh",
+      left:"17vw",
+      color:"white"
+    }}>
+      <h1 >Drip</h1>
+      <img src={Drip} 
+       style={{
+        height:"40vh",
+        width:"20vw"
+      }} />
+    </div>
+    <div className="Drop" style={{
+      display:"flex",
+      flexDirection:"column",
+      justifyContent:"center",
+      alignItems:"center",
+      position : "absolute",
+      top:"42vh",
+      right:"22vw",
+      color:"white"
+    }}>
+      <h1>Drop</h1>
+      <img src={Drop} style={{
+        height:"25vh",
+        width:"15vw"
+      }}/>
+
+    </div>
+    </>
     }
      
     </div>
