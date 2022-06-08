@@ -3,31 +3,19 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  BrowserRouter 
-} from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Login from "./pages/login";
 import Register from "./pages/register";
 
-
-
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  
-<<<<<<< HEAD
-<BrowserRouter>
-=======
-<Router>
->>>>>>> 816960978137ffa8f04f94808043ca41b3ad17a2
-
-  <React.StrictMode>
+  <BrowserRouter>
+    <React.StrictMode>
       <App />
     </React.StrictMode>
-</BrowserRouter>
-
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
