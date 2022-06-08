@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
+  BrowserRouter 
 } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Login from "./pages/login";
@@ -16,19 +14,15 @@ import Register from "./pages/register";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   
-<Router>
+<BrowserRouter>
 
   <React.StrictMode>
-      <Navigation/>
-      <Routes>
-          <Route exact path="/" element={<App />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/register" element={<Register />} />
-        </Routes>
+      <App />
     </React.StrictMode>
-</Router>
+</BrowserRouter>
 
 );
 

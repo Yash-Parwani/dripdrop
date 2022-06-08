@@ -19,6 +19,7 @@ function Navigation() {
               />
               <span className="center">DripDrop</span>
             </Navbar.Brand>
+            
           </LinkContainer>
           <Nav className="justify-content-end">
             <LinkContainer to="/login">
