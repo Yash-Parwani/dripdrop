@@ -1,6 +1,7 @@
+
 import { LinkContainer } from "react-router-bootstrap";
 import DropPage from "../assets/images/DropPage.png"
-function Drop({loggedIn}) {
+function Drop({loggedIn,usertype}) {
   
 
   return (
@@ -18,9 +19,9 @@ function Drop({loggedIn}) {
         position:"relative",
         zIndex: "0",
       }}
+
     >
-      
-   
+     
      
     </div>
   );

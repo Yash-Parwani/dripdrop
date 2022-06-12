@@ -1,8 +1,8 @@
 import { LinkContainer } from "react-router-bootstrap";
 import DripPage from "../assets/images/DripPage.png"
-function Drip({loggedIn}) {
+function Drip({loggedIn,usertype}) {
   
-
+  console.log(usertype)
   return (
      
     <div

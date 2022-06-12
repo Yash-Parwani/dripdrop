@@ -3,7 +3,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import DripDrop from "../assets/images/DripDrop.png";
 
 
-function Navigation({loggedIn}) {
+function Navigation({loggedIn,usertype}) {
   return (
     <div className="Navigation">
       <Navbar bg="dark" variant="dark">
@@ -17,7 +17,11 @@ function Navigation({loggedIn}) {
                 height="35"
                 className="d-inline-block align-top"
               />
-              <span className="center">DripDrop</span>
+              {!usertype && !loggedIn && <span className="center">DripDrop</span>}
+              {usertype && !loggedIn && <span className="center">DripDrop</span>}
+              {usertype == 'G' && loggedIn && <span className="center">DripDrop Government</span>}
+              {usertype == 'P' && loggedIn && <span className="center">DripDrop Personal</span>}
+              
             </Navbar.Brand>
             
           </LinkContainer>

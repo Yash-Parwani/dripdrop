@@ -1,13 +1,14 @@
 import {Form,Button} from "react-bootstrap"
 import PlzLogin from "../assets/images/PlzLogin.png";
 import {useNavigate} from "react-router-dom"
-import { useEffect } from "react";
+import { useEffect ,useState} from "react";
 
-function Register() {
+function Register({type}) {
   const navigate = useNavigate()
+  const [t,setT] = useState('')
   const handleSubmit = (event) =>{
     event.preventDefault();
-
+    type(t)
 
     navigate('/login');
 
@@ -37,14 +38,14 @@ function Register() {
     <Form.Label style={{
       color:"white"
     }}>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
+    <Form.Control type="email" placeholder="Enter email"  />
     
   </Form.Group>
-  <Form.Group className="mb-3 " controlId="formBasicEmail">
+  <Form.Group className="mb-3 " controlId="formBasicText">
     <Form.Label style={{
       color:"white"
-    }}>Enter Type</Form.Label>
-    <Form.Control type="text" placeholder="Enter type" />
+    }}>Enter Type: P for personal , G for goverenment</Form.Label>
+    <Form.Control type="text" placeholder="Enter type" value={t} onChange={e => setT(e.target.value)}/>
     
   </Form.Group>
 
