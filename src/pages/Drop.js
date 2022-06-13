@@ -21,6 +21,19 @@ function Drop({loggedIn,usertype}) {
       }}
 
     >
+      <p style={{color:"white",
+      position:"relative",
+      top:"50%",
+      left:"10%",
+      fontSize:20
+    }}>
+        Blood donation camp at SRM Hospital
+        <div>
+          
+        </div>
+        <a href="https://www.google.com/maps/dir//srm+hospital/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3a52f70b53105bc7:0xc5d8b72fb4218091?sa=X&hl=en&ved=2ahUKEwiJ4uWBh6r4AhX82DgGHbfbBpYQ9Rd6BAgDEAQ" >Location of hospital</a>
+      </p>
+
      
      
     </div>
