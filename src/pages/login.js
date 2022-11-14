@@ -1,10 +1,10 @@
 import {Form,Button} from "react-bootstrap"
 import PlzLogin from "../assets/images/PlzLogin.png";
 
-import { Navigate, useNavigate} from "react-router-dom"
-import { useEffect ,useRef } from "react";
+import { useNavigate} from "react-router-dom"
+import { useRef } from "react";
 import {auth} from '../firebase'
-import db from "../firebase";
+
 
 
 import { signInWithEmailAndPassword } from "firebase/auth";

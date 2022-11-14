@@ -1,5 +1,4 @@
 
-import { LinkContainer } from "react-router-bootstrap";
 import DropPage from "../assets/images/DropPage.png"
 function Drop({loggedIn,usertype}) {
   

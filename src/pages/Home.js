@@ -1,10 +1,10 @@
-import { useState } from "react";
+
 
 import HomePage from "../assets/images/HomePage.png";
 import PlzLogin from "../assets/images/PlzLogin.png";
 import Drop from "../assets/images/Drop.png";
 import Drip from "../assets/images/Drip.png";
-import { LinkContainer } from "react-router-bootstrap";
+
 import { Link } from "react-router-dom";
 function Home({ loggedIn }) {
   return (
@@ -56,11 +56,13 @@ function Home({ loggedIn }) {
             >
               <h1>Drip</h1>
               <img
+                alt="drop"
                 src={Drip}
                 style={{
                   height: "40vh",
                   width: "20vw",
                 }}
+                
               />
             </div>
           </Link>
@@ -81,6 +83,7 @@ function Home({ loggedIn }) {
           >
             <h1>Drop</h1>
             <img
+               alt="drop"
               src={Drop}
               style={{
                 height: "25vh",

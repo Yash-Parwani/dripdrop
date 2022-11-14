@@ -1,11 +1,11 @@
-import { LinkContainer } from "react-router-bootstrap";
+
 import DripPage from "../assets/images/DripPage.png"
 import {Form,Button} from "react-bootstrap"
 import { useNavigate } from "react-router-dom";
 
 
 import { addDoc ,collection, } from "firebase/firestore";
-import db, { auth } from "../firebase";
+import db from "../firebase";
 
 
 

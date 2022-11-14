@@ -1,11 +1,11 @@
 import { Form, Button } from "react-bootstrap";
 import PlzLogin from "../assets/images/PlzLogin.png";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import {  useRef} from "react";
 import { auth } from "../firebase";
 import db from "../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { setDoc, doc, collection } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 
 function Register() {
   const navigate = useNavigate();

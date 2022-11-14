@@ -31,8 +31,8 @@ function Navigation({loggedIn,usertype}) {
               />
               {!usertype && !loggedIn && <span className="center">DripDrop</span>}
               {usertype && !loggedIn && <span className="center">DripDrop</span>}
-              {usertype == 'G' && loggedIn && <span className="center">DripDrop Government</span>}
-              {usertype == 'P' && loggedIn && <span className="center">DripDrop Personal</span>}
+              {usertype === 'G' && loggedIn && <span className="center">DripDrop Government</span>}
+              {usertype === 'P' && loggedIn && <span className="center">DripDrop Personal</span>}
               
             </Navbar.Brand>
             

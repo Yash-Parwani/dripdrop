@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter } from "react-router-dom";
-import Navigation from "./components/Navigation";
-import Login from "./pages/login";
-import Register from "./pages/register";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
