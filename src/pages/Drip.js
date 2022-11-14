@@ -1,10 +1,38 @@
 import { LinkContainer } from "react-router-bootstrap";
 import DripPage from "../assets/images/DripPage.png"
 import {Form,Button} from "react-bootstrap"
-function Drip({loggedIn,usertype}) {
+import { useNavigate } from "react-router-dom";
+
+import db from "./firebase";
+import { setDoc ,doc } from "firebase/firestore";
+import { auth } from "./firebase";
+
+
+
+function Drip({loggedIn,usertype,phone,id}) {
+  const navigate = useNavigate();
+  const handleSubmit =async (event) =>{
+    event.preventDefault();
+    const unit = event.target.formBasicUnits.value;
+    const blood = event.target.formBasicBlood.value;
+    const location = event.target.formBasicLocation.value;
+    await setDoc(doc(db, "messages", `${id}`), {
+         to: `+91${phone}`,
+         body: `Hold tight!! Sending ${unit}'s of ${blood} at ${location} ASAP`
+    });
+    
+
+
+    navigate('/');
+
+
+
+  }
   
-  console.log(usertype)
   return (
+
+
+
      
     <div
       className="Drip"
@@ -20,26 +48,27 @@ function Drip({loggedIn,usertype}) {
         zIndex: "0",
       }}
     >
-      <Form style={{
+      <Form onSubmit={handleSubmit} style={{
         position:"relative",
         top:"40%",
         width:"40%"
+        
       }} >
-  <Form.Group className="mb-3 " controlId="formBasicText">
+  <Form.Group className="mb-3 " controlId="formBasicLocation">
     <Form.Label style={{
       color:"white"
     }}>Location To Drip</Form.Label>
     <Form.Control type="text" placeholder="Enter drip location"  />
     
   </Form.Group>
-  <Form.Group className="mb-3 " controlId="formBasicText">
+  <Form.Group className="mb-3 " controlId="formBasicBlood">
     <Form.Label style={{
       color:"white"
     }}>Type of blood</Form.Label>
     <Form.Control type="text" placeholder="Type of blood"  />
     
   </Form.Group>
-  <Form.Group className="mb-3 " controlId="formBasicText">
+  <Form.Group className="mb-3 " controlId="formBasicUnits">
     <Form.Label style={{
       color:"white"
     }}>Unit of blood required</Form.Label>

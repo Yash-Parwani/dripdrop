@@ -2,15 +2,28 @@ import {Form,Button} from "react-bootstrap"
 import PlzLogin from "../assets/images/PlzLogin.png";
 
 import { Navigate, useNavigate} from "react-router-dom"
-import { useEffect } from "react";
+import { useEffect ,useRef } from "react";
+import {auth} from '../firebase'
+import db from "../firebase";
+
+
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 
 function Login({loggedIn,handleLoggedIn}) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const email = useRef(null);
+  const pass = useRef(null);
   const handleSubmit = (event) =>{
     event.preventDefault();
-    handleLoggedIn();
-    console.log(loggedIn);
+    // handleLoggedIn();
+    // console.log(loggedIn);
+    signInWithEmailAndPassword(auth,email.current.value , pass.current.value)
+    .then((authUser) =>{
+
+   
+    })
+    .catch((error)=> alert(error.message))
 
 
     navigate('/');
@@ -41,7 +54,7 @@ function Login({loggedIn,handleLoggedIn}) {
     <Form.Label style={{
       color:"white"
     }}>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
+    <Form.Control ref={email} type="email" placeholder="Enter email" />
     
   </Form.Group>
 
@@ -49,7 +62,7 @@ function Login({loggedIn,handleLoggedIn}) {
     <Form.Label style={{
       color:"white"
     }}>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
+    <Form.Control ref={pass} type="password" placeholder="Password" />
   </Form.Group>
 
   <Button variant="primary" type="submit">

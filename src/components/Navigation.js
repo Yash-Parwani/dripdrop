@@ -1,9 +1,21 @@
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav  ,Button} from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import DripDrop from "../assets/images/DripDrop.png";
+import { auth } from "../firebase";
+import {  signOut } from "firebase/auth";
+
 
 
 function Navigation({loggedIn,usertype}) {
+  const userSignOut= () => {
+    signOut(auth)
+    .then(()=>{
+      alert("Signed out Successfully")
+    })
+    .catch((error)=>{
+      alert("Error in signing out",error.message)
+    })
+  };
   return (
     <div className="Navigation">
       <Navbar bg="dark" variant="dark">
@@ -37,6 +49,15 @@ function Navigation({loggedIn,usertype}) {
             </LinkContainer>
           </Nav>
           </>}
+          {
+            loggedIn &&
+            <Nav className="justify-content-end">
+            <Button onClick={userSignOut}>
+              Sign Out
+            </Button>
+           
+          </Nav>
+          }
           
         </Container>
       </Navbar>
