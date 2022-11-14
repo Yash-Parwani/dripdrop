@@ -3,7 +3,7 @@ import DripPage from "../assets/images/DripPage.png"
 import {Form,Button} from "react-bootstrap"
 import { useNavigate } from "react-router-dom";
 
-import db from "./firebase";
+import db from "..firebase/";
 import { setDoc ,doc } from "firebase/firestore";
 import { auth } from "./firebase";
 
