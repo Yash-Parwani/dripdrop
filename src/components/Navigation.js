@@ -49,15 +49,13 @@ function Navigation({loggedIn,usertype}) {
             </LinkContainer>
           </Nav>
           </>}
-          {
-            loggedIn &&
+          {loggedIn && <>
             <Nav className="justify-content-end">
-            <Button onClick={userSignOut}>
-              Sign Out
-            </Button>
-           
+              <Button onClick={userSignOut} >Sign Out</Button>
           </Nav>
+          </>
           }
+         
           
         </Container>
       </Navbar>

@@ -3,9 +3,9 @@ import DripPage from "../assets/images/DripPage.png"
 import {Form,Button} from "react-bootstrap"
 import { useNavigate } from "react-router-dom";
 
-import db from "..firebase/";
-import { setDoc ,doc } from "firebase/firestore";
-import { auth } from "./firebase";
+
+import { addDoc ,collection, } from "firebase/firestore";
+import db, { auth } from "../firebase";
 
 
 
@@ -16,10 +16,11 @@ function Drip({loggedIn,usertype,phone,id}) {
     const unit = event.target.formBasicUnits.value;
     const blood = event.target.formBasicBlood.value;
     const location = event.target.formBasicLocation.value;
-    await setDoc(doc(db, "messages", `${id}`), {
+    await addDoc(collection(db, "messages"), {
          to: `+91${phone}`,
          body: `Hold tight!! Sending ${unit}'s of ${blood} at ${location} ASAP`
     });
+    
     
 
 
